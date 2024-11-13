@@ -1,416 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-  /* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.navbar a, .sign-up {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #fff;
-}
-
-.sign-up {
-    padding: 10px 20px;
-    background-color: #f8a834;
-    border: none;
-    border-radius: 5px; 
-}
-.sign-up:hover {
-    color: black;
-    background-color: floralwhite;
-    cursor: pointer;
-}
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 0;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.hero-text h2 {
-    font-size: 2.5em;
-}
-
-.hero-text h2 span {
-    color: #a78bfa;
-}
-
-.hero-image img {
-    border-radius: 50%;
-}
-
-.stats span {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.courses {
-    padding: 40px 0;
-}
-
-.course-grid {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-}
-
-.course-box {
-    flex: 1;
-    margin: 0 10px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #333;
-    text-align: center;
-    min-width: 200px; /* Ensure the course boxes don't become too small */
-}
-
-.course-box.uiux { background-color: #f43f5e; }
-.course-box.web-dev { background-color: #fbbf24; }
-.course-box.marketing { background-color: #38bdf8; }
-.course-box.practical { background-color: #a78bfa; }
-
-.course-box.uiux:hover {border:1px solid #f43f5e; background-color: #1a1a1a; cursor: pointer;}
-.course-box.web-dev:hover {border:1px solid #fbbf24; background-color: #1a1a1a;cursor: pointer; }
-.course-box.marketing:hover {border:1px solid #38bdf8; background-color: #1a1a1a; cursor: pointer;}
-.course-box.practical:hover {border:1px solid #a78bfa; background-color: #1a1a1a; cursor: pointer;}
-
-.browse-all {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #f8a834;
-    border: none;
-    border-radius: 5px;
-}
-.browse-all:hover{
-    background-color: black;
-    border: #fbbf24 1px solid;
-    color: #fff;
-    cursor: pointer;
-}
-
-.hero-image img {
-    width: 300px; /* Adjust the size as needed */
-    height: auto; /* Maintains aspect ratio */
-    border-radius: 50%;
-}
-
-/* About Section */
-.about-section {
-    padding: 80px 20px;
-    background-color: #2a2a2a; /* Dark background for contrast */
-    color: #fff;
-    width: 100%;
-    text-align: left; /* Left-align for a more readable, long-form style */
-    float: left;
-}
-
-.about-container {
-    max-width: 900px; /* Wider max-width for a long-form look */
-}
-
-.about-section h3 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: left; /* Centering the heading */
-}
-
-.about-description {
-    font-size: 1.2em;
-    line-height: 1.8;
-    margin-bottom: 30px;
-    text-align: justify; /* Justify the text for a clean long-form look */
-}
-
-/* Instructional Section */
-.instruction-section {
-    /* padding: 80px 20px; */
-    /* background-color: #f1f1f1; Light background color to differentiate */
-    color: #333;
-    text-align: center;
-    width: 100%;
-    /* margin-top: 50px; Adds extra space above to visually separate it from other sections */
-}
-
-.instruction-container {
-    max-width: 800px;
-    /* margin: auto; */
-}
-
-.instruction-section h2 {
-    font-size: 2.5em;
-    /* margin-bottom: 40px; */
-    color: #1a1a1a;
-}
-
-.instruction-grid {
-    display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.instruction-item {
-    background-color: #5867ebf3;
-    /* padding: 20px; */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.instruction-item:hover {
-    background-color: #1a1a1a;
-    border: #04bdf5 1px solid;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.instruction-item h3 {
-    font-size: 1em;
-    /* margin-bottom: 10px; */
-    color: #ffffff; /* Accent color */
-}
-
-.instruction-item p {
-    font-size: 1em;
-    line-height: 1.5;
-    color: #555;
-}
-
-.scratch {
-    border: blue  1px solid;
-    margin-top: 30px;
-    /* padding: 10px; */
-    border-radius: 10px;
-    background-color: #04bdf5;
-}
-
-.scratch p {
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.scratch:hover {
-    background-color: black;
-    cursor: pointer;
-}
-
-.engmaster {
-    color: white;
-}
-
-.aws {
-    color: #fff;
-}
-
-.aws2 {
-    color: white;
-}
-
-.aws3 {
-    color: #fff;
-}
-
-.aws4 {
-    color: #fff;
-}
-
-.codeopsabout {
-    justify-content: center;
-    {
-        .{
-            float: right;
-        }
-}
-
-.course {
-    display: flex;
-    justify-content: center;
-}
-
-/* Responsive Design (Mobile & Tablet View) */
-@media screen and (max-width: 768px) {
-    /* Header adjustments */
-    .header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .hero-text h2 {
-        font-size: 2em;
-    }
-
-    .hero-image img {
-        width: 200px;
-        margin-top: 20px;
-    }
-
-    .course-grid {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .course-box {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .instruction-grid {
-        grid-template-columns: 1fr; /* Stack items vertically */
-    }
-
-    .instruction-item {
-        padding: 15px;
-    }
-
-    .browse-all {
-        width: 100%;
-    }
-
-    .scratch p {
-        font-size: 18px;
-    }
-}
-
-/* Tablet View Adjustments */
-@media screen and (max-width: 1024px) {
-    .hero {
-        flex-direction: column;
-        padding: 30px;
-    }
-
-    .course-grid {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .course-box {
-        width: 45%; /* Adjust size for tablets */
-        margin-bottom: 20px;
-    }
-
-    .instruction-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns */
-    }
-
-    .scratch p {
-        font-size: 18px;
-    }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeOps</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
-   <div class="container">
+    <div class="container">
         <!-- Header Section -->
         <header class="header">
-            <div class="logo"><img src="./Final-ezgif.com-video-to-gif-converter.gif" width="400px" alt=""></div>
+            <div class="logo">
+                <img src="./Final-ezgif.com-video-to-gif-converter.gif" width="400" alt="CodeOps Animated Logo">
+            </div>
             <nav class="navbar">
-                <a href="./CodeOps.html"><button class="sign-up">Home</button></a>   
-                <a href="Contactus.html"><button class="sign-up">Contact</button></a>
-                <a href="./Aboutus.html"><button class="sign-up">About Us</button></a>
+                <a href="./CodeOps.html" class="nav-button">Home</a>
+                <a href="./Contactus.html" class="nav-button">Contact</a>
+                <a href="./Aboutus.html" class="nav-button">About Us</a>
             </nav>
         </header>
-         <!-- Main Content -->
-          <Section>
-              <h2></h2>
-          </Section>
-    
+
         <!-- Main Content -->
         <main class="main-content">
             <section class="hero">
                 <div class="hero-text">
-                    <h2>Start Your Dream Course by Just paying 50% Now, Pay the Remaining amount Only After You’re Hired!   .<span>CodeOps</span></h2>
-                    <p>Our e-learning programs are designed to deliver dynamic, coding courses customized to elevate your coding
-                        skills and advance their programming expertise.</p>
+                    <h2>Start Your Dream Course by Just Paying 50% Now, Pay the Remaining Amount Only After You’re Hired! <span>CodeOps</span></h2>
+                    <p>Our e-learning programs are designed to deliver dynamic coding courses customized to elevate your coding skills and advance your programming expertise.</p>
                     <div class="stats">
+                        <!-- Add relevant statistics or remove if not needed -->
                     </div>
-                                <!-- Instructional Section (Bottom of Page) -->
-<section class="instruction-section">
-    <div class="instruction-container">
-        <div class="instruction-grid">
-            <div class="instruction-item">
-                <h3>Interactive Lessons</h3>
-            </div>
-            <div class="instruction-item">
-                <h3>Learn at Your Own Place</h3>
-            </div>
-            <div class="instruction-item">
-                <h3>Supportive Community</h3>
-            </div>
-            <div class="instruction-item">
-                <h3>Future-Ready Skills</h3>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Scratch class-->
-<section class="scratch">
-    <p>Start from Scratch: No IT background needed- designed for absolute beginners.</p>
-</section>
+
+                    <!-- Instructional Section (Bottom of Page) -->
+                    <section class="instruction-section">
+                        <div class="instruction-container">
+                            <div class="instruction-grid">
+                                <div class="instruction-item">
+                                    <h3>Interactive Lessons</h3>
+                                </div>
+                                <div class="instruction-item">
+                                    <h3>Learn at Your Own Pace</h3>
+                                </div>
+                                <div class="instruction-item">
+                                    <h3>Supportive Community</h3>
+                                </div>
+                                <div class="instruction-item">
+                                    <h3>Future-Ready Skills</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Scratch Class -->
+                    <section class="scratch">
+                        <p>Start from Scratch: No IT background needed—designed for absolute beginners.</p>
+                    </section>
                 </div>
-                
+
                 <div class="hero-image">
-                    <!-- Replace src with the URL or path to your logo -->
-                    <img src="./CODE_LOGO.jpg" alt="Learning Chart">
+                    <img src="./CODE_LOGO.jpg" alt="CodeOps Learning Chart">
                     <div class="student-info">
+                        <!-- Add student info or remove if not needed -->
                     </div>
                 </div>
             </section>
+
             <!-- Courses Section -->
             <section class="courses">
                 <h2>Browse Top Essential Career Courses</h2>
                 <div class="course-grid">
-                    <a href="./English Learning Roadmap-roadmap.jpg" class="engmaster"><div class="course-box uiux">English Master</div></a>
-                    <a href="" class="aws"> <div class="course-box web-dev"> AWS DevOps Master Program</div></a>
-                    <a href="./full-stack.pdf" class="aws2"><div class="course-box marketing">Full stack Dev</div></a>
-                    <a href="./flutter (1).pdf"class="aws3"><div class="course-box practical">Flutter Dev </div></a>
-                    <a href="./prompt-engineering.pdf"class="aws4"><div class="course-box practical">Prompt Engineering</div></a>
+                    <a href="./English-Learning-Roadmap.html" class="course-link">
+                        <div class="course-box english-master">English Master</div>
+                    </a>
+                    <a href="./AWS-DevOps-Master-Program.html" class="course-link">
+                        <div class="course-box aws-devops">AWS DevOps Master Program</div>
+                    </a>
+                    <a href="./full-stack.html" class="course-link">
+                        <div class="course-box full-stack">Full Stack Dev</div>
+                    </a>
+                    <a href="./flutter.html" class="course-link">
+                        <div class="course-box flutter-dev">Flutter Dev</div>
+                    </a>
+                    <a href="./prompt-engineering.html" class="course-link">
+                        <div class="course-box prompt-engineering">Prompt Engineering</div>
+                    </a>
                 </div>
                 <button class="browse-all">Browse All</button>
-        </header>
-         <!-- Main Content -->
-        <main class="main-content">
+            </section>
+        </main>
+    </div>
+</body>
+</html>
