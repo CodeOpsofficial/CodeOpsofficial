@@ -248,13 +248,272 @@ color: #fff;
 }
 .codeopsabout{
     justify-content: center;
-    {
-.{
     float: right;
 }
 .course{
     display: flex;
     justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+    body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    width: 100%;
+}
+
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar a, .sign-up {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.sign-up {
+    padding: 10px 20px;
+    background-color: #f8a834;
+    border: none;
+    border-radius: 5px;
+}
+
+.sign-up:hover {
+    color: black;
+    background-color: floralwhite;
+    cursor: pointer;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.hero-text h2 {
+    font-size: 2.5em;
+}
+
+.hero-text h2 span {
+    color: #a78bfa;
+}
+
+.hero-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.stats span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.courses {
+    padding: 40px 0;
+}
+
+.course-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+}
+
+.course-box {
+    flex: 1 1 calc(50% - 20px); /* Two columns on smaller screens */
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #333;
+    text-align: center;
+}
+
+.course-box.uiux { background-color: #f43f5e; }
+.course-box.web-dev { background-color: #fbbf24; }
+.course-box.marketing { background-color: #38bdf8; }
+.course-box.practical { background-color: #a78bfa; }
+
+.course-box:hover {
+    border: 1px solid #fff;
+    background-color: #1a1a1a;
+    cursor: pointer;
+}
+
+.browse-all {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f8a834;
+    border: none;
+    border-radius: 5px;
+}
+
+.browse-all:hover {
+    background-color: black;
+    border: #fbbf24 1px solid;
+    color: #fff;
+    cursor: pointer;
+}
+
+.about-section {
+    padding: 80px 20px;
+    background-color: #2a2a2a;
+    color: #fff;
+    width: 100%;
+    text-align: left;
+}
+
+.about-container {
+    max-width: 900px;
+}
+
+.about-section h3 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.instruction-section {
+    color: #333;
+    text-align: center;
+    width: 100%;
+}
+
+.instruction-container {
+    max-width: 800px;
+}
+
+.instruction-section h2 {
+    font-size: 2.5em;
+    color: #1a1a1a;
+}
+
+.instruction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.instruction-item {
+    background-color: #5867ebf3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.instruction-item:hover {
+    background-color: #1a1a1a;
+    border: #04bdf5 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.scratch {
+    border: blue 1px solid;
+    margin-top: 30px;
+    border-radius: 10px;
+    background-color: #04bdf5;
+}
+
+.scratch:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 200px;
+    }
+
+    .hero-text h2 {
+        font-size: 1.8em;
+    }
+
+    .course-box {
+        flex: 1 1 100%; /* One column on smaller screens */
+        margin: 10px 0;
+    }
+
+    .about-section {
+        padding: 40px 10px;
+    }
+
+    .about-section h3 {
+        font-size: 2em;
+    }
+
+    .instruction-grid {
+        grid-template-columns: 1fr; /* Single column */
+    }
+}
+
+@media (max-width: 480px) {
+    .sign-up {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5em;
+    }
+
+    .instruction-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 }
     </style>
 </head>
